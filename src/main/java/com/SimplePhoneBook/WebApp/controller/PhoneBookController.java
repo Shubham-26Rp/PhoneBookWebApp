@@ -74,7 +74,12 @@ public class PhoneBookController {
         return phoneBookService.getAllContact();
     }
 
-    @GetMapping("/getContactByPhoneNumber")
+    @GetMapping("/getContactByFirstLetterJPAQL")
+    public List<PhoneBook> getContactByFirstLetterJPAQL(@PathVariable String contactName) {
+        return phoneBookService.getContactStartWithLetter(contactName);
+    }
+
+    @GetMapping("/getContactByPhNumberJPAQL")
     public List<PhoneBook> getContactByPhNumberJPAQL(@PathVariable int phoneNumber) {
         return phoneBookService.getContactByPhoneNumber(phoneNumber);
     }

@@ -16,6 +16,11 @@ public class PhoneBookServiceImpl implements PhoneBookService {
     }
 
     @Override
+    public List<PhoneBook> getContactStartWithLetter(String contactName) {
+        return getContactStartWithLetter(contactName);
+    }
+
+    @Override
     public List<PhoneBook> getContactByPhoneNumber(int phoneNumber) {
         return phoneBookRepository.getContactByPhoneNumber(phoneNumber);
     }

@@ -8,5 +8,7 @@ import java.util.List;
 public interface PhoneBookService {
     public List<PhoneBook> getAllContact();
 
+    public List<PhoneBook> getContactStartWithLetter(@Param("c") String contactName);
+
     public List<PhoneBook> getContactByPhoneNumber(@Param("c") int phoneNumber);
 }

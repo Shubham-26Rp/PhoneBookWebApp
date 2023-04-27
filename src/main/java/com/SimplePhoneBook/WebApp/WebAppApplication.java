@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
-@ComponentScan({"PhoneBookController", "PhoneBookRepository"})
+@ComponentScan(basePackages = {"com.SimplePhoneBook.WebApp.controller.PhoneBookController", "com.SimplePhoneBook.WebApp.repository.PhoneBookRepository"})
 @EnableJpaRepositories("com.SimplePhoneBook.WebApp.repository.PhoneBookRepository")
 @EntityScan(basePackages = {"com.SimplePhoneBook.WebApp.model.PhoneBook"})
 public class WebAppApplication {

@@ -89,4 +89,8 @@ public class PhoneBookController {
         return phoneBookService.getContactsWithNoPhoneNumber();
     }
 
+    @GetMapping("/countByPhoneNumber")
+    public int getCountOfContactByPhoneNumber(@PathVariable int phoneNumber) {
+        return phoneBookService.getCountOfContactByContactNumber(phoneNumber);
+    }
 }

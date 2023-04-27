@@ -19,4 +19,7 @@ public interface PhoneBookRepository extends JpaRepository<PhoneBook, Long> {
 
     @Query(value = "select * from Phone_Book where phoneBook IS NULL", nativeQuery = true)
     public List<PhoneBook> getContactsWithNoPhoneNumber();
+
+    @Query("select count(*) from Phone_Book o where o.phoneNumber=:c")
+    public int getCountOfContactByContactNumber(@Param("c") int phoneNumber);
 }

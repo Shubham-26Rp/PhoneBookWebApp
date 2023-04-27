@@ -29,4 +29,9 @@ public class PhoneBookServiceImpl implements PhoneBookService {
     public List<PhoneBook> getContactsWithNoPhoneNumber() {
         return phoneBookRepository.getContactsWithNoPhoneNumber();
     }
+
+    @Override
+    public int getCountOfContactByContactNumber(int phoneNumber) {
+        return phoneBookRepository.getCountOfContactByContactNumber(phoneNumber);
+    }
 }

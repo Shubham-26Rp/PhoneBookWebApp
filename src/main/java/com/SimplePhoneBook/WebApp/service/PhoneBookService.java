@@ -13,4 +13,6 @@ public interface PhoneBookService {
     public List<PhoneBook> getContactByPhoneNumber(@Param("c") int phoneNumber);
 
     public List<PhoneBook> getContactsWithNoPhoneNumber();
+
+    public int getCountOfContactByContactNumber(@Param("c") int phoneNumber);
 }

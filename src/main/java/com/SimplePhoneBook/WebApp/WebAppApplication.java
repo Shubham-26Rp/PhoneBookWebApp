@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
+@SpringBootApplication(exclude = {SecurityAutoConfiguration.class},scanBasePackages = {"com.SimplePhoneBook.WebApp.controller.PhoneBookController","com.SimplePhoneBook.WebApp.repository.PhoneBookRepository"})
 @ComponentScan(basePackages = {"com.SimplePhoneBook.WebApp.controller.PhoneBookController", "com.SimplePhoneBook.WebApp.repository.PhoneBookRepository"})
 @EnableJpaRepositories("com.SimplePhoneBook.WebApp.repository.PhoneBookRepository")
 @EntityScan(basePackages = {"com.SimplePhoneBook.WebApp.model.PhoneBook"})

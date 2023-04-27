@@ -2,6 +2,7 @@ package com.SimplePhoneBook.WebApp.controller;
 
 import com.SimplePhoneBook.WebApp.model.PhoneBook;
 import com.SimplePhoneBook.WebApp.repository.PhoneBookRepository;
+import com.SimplePhoneBook.WebApp.service.PhoneBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,8 @@ import java.util.Optional;
 public class PhoneBookController {
     @Autowired
     PhoneBookRepository phoneBookRepository;
+
+    PhoneBookService phoneBookService;
 
     @PostMapping("/phonebook")
     public String CreateNewContact(@RequestBody PhoneBook phoneBook) {
@@ -66,4 +69,13 @@ public class PhoneBookController {
         return "All Contact Deleted from PhoneBook Successfully";
     }
 
+    @GetMapping("/getAllContactForJPAQL")
+    public List<PhoneBook> getAllContact() {
+        return phoneBookService.getAllContact();
+    }
+
+    @GetMapping("/getContactByPhoneNumber")
+    public List<PhoneBook> getContactByPhNumberJPAQL(@PathVariable int phoneNumber) {
+        return phoneBookService.getContactByPhoneNumber(phoneNumber);
+    }
 }

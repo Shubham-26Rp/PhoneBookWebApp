@@ -11,4 +11,6 @@ public interface PhoneBookService {
     public List<PhoneBook> getContactStartWithLetter(@Param("c") String contactName);
 
     public List<PhoneBook> getContactByPhoneNumber(@Param("c") int phoneNumber);
+
+    public List<PhoneBook> getContactsWithNoPhoneNumber();
 }

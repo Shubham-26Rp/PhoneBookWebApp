@@ -83,4 +83,10 @@ public class PhoneBookController {
     public List<PhoneBook> getContactByPhNumberJPAQL(@PathVariable int phoneNumber) {
         return phoneBookService.getContactByPhoneNumber(phoneNumber);
     }
+
+    @GetMapping("/contactWithNoNumber")
+    public List<PhoneBook> getContactWithNoNumberRegister() {
+        return phoneBookService.getContactsWithNoPhoneNumber();
+    }
+
 }
